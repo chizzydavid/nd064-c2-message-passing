@@ -1,0 +1,40 @@
+GRPC Server Documentation:  
+
+# SETUP 
+1. Populate location.proto file with
+```
+  syntax = "proto3";
+  package locationPackage;
+
+  service Location {
+    rpc AddLocation(LocationItem) returns (LocationItem);
+  }
+
+  message LocationItem {
+    int32 person_id = 1;
+    string latitude = 2;
+    string longitude = 3;
+  }
+```
+
+2. Install grpc tools / dependencies
+  python3 -m pip install grpcio
+  python3 -m pip install grpcio-tools
+
+3. Generate Python Code to Handle RPC calls
+  python3 -m grpc_tools.protoc -I./protobuf --python_out=./protobuf --pyi_out=./protobuf --grpc_python_out=./protobuf ./protobuf/location.proto
+
+4. Using the python grpc client installed earlier, setup a grpc server to listen and handle requests using the files generated above.
+
+
+
+# TESTING
+1. Navigate to the grpc module, build a docker image using the existing Dockerfile
+  docker build . --tag grpc-demo:latest
+
+2. Run the just built docker image in a container
+  docker run --name grpc-demo -d -p 5002:5002 grpc-demo:latest
+
+3. If the above steps are successful, a sample request can be made using Postman 
+  See the `docs/grpc_postman.png` screenshot as a reference
+
