@@ -5,13 +5,13 @@ This API is designed as a RESTful service for ease of consumption from the web a
 
 Connections API:
 Also a RESTful service, this api handles the most crucial functionality of Udaconnect and is very likely to receive large amounts of read requests.
-Refactoring to its own service allows it scale independently of other services and makes it easier for more functionality to be built ontop of it as the application grows.
+Refactoring to its own service allows it scale independently of other services and makes it easier to add more functionality as the application grows.
 
 
 Locations Event API:
 This service is designed to handle the large amount of location data that would be ingested from Udaconnect users. 
-Since increased speed and performance is a priority for this service, A GRPC server is selected as the message passing technique due to its due to its use of protocol buffers.
-This data is then funneled into Kafka Clusters / Queues as they are suitable for processing and holding large amounts of data in a short time.
+Since increased speed and performance is a priority for this service, A GRPC server is selected as the message passing technique due to its use of protocol buffers.
+This data is then funneled into Kafka Clusters / Queues as they are suitable for processing and holding large amounts of data.
 
 
 Locations API:

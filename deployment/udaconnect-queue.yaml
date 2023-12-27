@@ -1,4 +1,4 @@
-# A kafka cluster was installed into the cluster using the Helm package manager with the command below
+# A kafka queue was installed into the kubernetes cluster using the Helm package manager with the command below
 # helm install kafka oci://registry-1.docker.io/bitnamicharts/kafka
 
 # Reference

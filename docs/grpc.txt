@@ -33,7 +33,7 @@ GRPC Server Documentation:
   docker build . --tag grpc-demo:latest
 
 2. Run the just built docker image in a container
-  docker run --name grpc-demo -d -p 5002:5002 grpc-demo:latest
+  docker run --name grpc-demo -d -p 5003:5003 grpc-demo:latest
 
 3. If the above steps are successful, a sample request can be made using Postman 
   See the `docs/grpc_postman.png` screenshot as a reference
